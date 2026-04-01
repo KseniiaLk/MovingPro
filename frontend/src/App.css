@@ -1,0 +1,152 @@
+#center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem 3rem;
+}
+
+.hero {
+  position: relative;
+  width: 170px;
+  height: 179px;
+  margin: 0 auto 2rem;
+}
+
+.hero .base {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 170px;
+  height: auto;
+  z-index: 0;
+}
+
+.hero .framework {
+  position: absolute;
+  left: calc(50% - 10px);
+  top: calc(50% - 24px);
+  width: 96px;
+  height: auto;
+  z-index: 1;
+}
+
+.hero .vite {
+  position: absolute;
+  left: calc(50% + 36px);
+  top: calc(50% + 28px);
+  width: 80px;
+  height: auto;
+  z-index: 2;
+}
+
+.counter {
+  margin-top: 1.25rem;
+}
+
+.ticks {
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border) 0,
+    var(--border) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+#next-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  text-align: left;
+  border-block: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  #next-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+#docs,
+#social {
+  padding: 2rem 1.5rem;
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  #docs {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#docs .icon,
+#social .icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+#docs h2,
+#social h2 {
+  margin-bottom: 0.5rem;
+}
+
+#docs p,
+#social p {
+  margin-bottom: 1rem;
+  color: var(--text, var(--muted-foreground));
+}
+
+#docs ul,
+#social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#docs li,
+#social li {
+  margin-bottom: 0.75rem;
+}
+
+#docs a,
+#social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-ui, var(--primary));
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#docs a:hover,
+#social a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#social {
+  background: var(--social-bg);
+}
+
+#spacer {
+  height: 4rem;
+  flex-shrink: 0;
+}

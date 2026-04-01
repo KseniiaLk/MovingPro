@@ -1,0 +1,14 @@
+@import 'tailwindcss' source(none);
+
+@source './**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@layer utilities {
+  .font-ibm-plex {
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: 0em;
+  }
+}
