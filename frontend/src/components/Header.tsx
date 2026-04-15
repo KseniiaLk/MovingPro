@@ -25,7 +25,7 @@ export function Header() {
     return () => {
       document.body.style.overflow = ''
     }
-  }, [mobileMenuOpen])
+  }, [])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -39,7 +39,6 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-gradient-to-br from-slate-900 via-sky-900 to-cyan-900 text-white shadow-lg shadow-black/20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-3 sm:h-[4.5rem] lg:h-20 lg:gap-4 xl:gap-6">
-          {/* Логотип: высота строки навигации; shrink-0 чтобы не вытеснять центр */}
           <a href="/" className="flex h-full shrink-0 items-center">
             <img
               src="/mtrlogo.png"
@@ -49,7 +48,6 @@ export function Header() {
             />
           </a>
 
-          {/* Navigation — flex-1 + min-w-0 чтобы ссылки не «ломали» сетку на десктопе */}
           <nav className="hidden min-w-0 flex-1 items-center justify-center gap-3 lg:flex xl:gap-5 2xl:gap-6">
             {navLinks.map((item) => (
               <a
@@ -62,7 +60,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Право: соцсети + CTA */}
           <div className="flex shrink-0 items-center justify-end gap-3 md:gap-5">
             <div className="hidden items-center gap-3 md:flex">
               <a
@@ -109,7 +106,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Мобильная навигация: вертикальная панель справа */}
       {mobileMenuOpen && (
         <>
           <button

@@ -7,6 +7,11 @@ import {
   Percent,
   ArrowRight,
 } from 'lucide-react'
+import {
+  SectionTitle,
+  STRETCHED_SECTION_FRAME_CLASS,
+  STRETCHED_SECTION_TITLE_CLASS,
+} from '@/components/SectionTitle'
 
 const benefits = [
   {
@@ -63,20 +68,18 @@ export function BenefitsSection() {
 
   return (
     <section id="benefits" className="relative overflow-hidden bg-white">
-      {/* Background decoration — вертикальный градиент от секции видео к низу */}
+    
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-100 via-slate-50 to-indigo-100"></div>
       <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-gradient-to-br from-blue-300/30 to-indigo-300/30 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-gradient-to-tr from-indigo-300/30 to-blue-300/30 blur-3xl"></div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-        {/* Section Header */}
-        <div className="mb-20 text-center">
-          <h2 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 lg:text-5xl xl:text-6xl">
-            Benefits of the Russian
-            <br />
-            Shared Values Visa Program
-          </h2>
-        </div>
+        <SectionTitle
+          frameClassName={STRETCHED_SECTION_FRAME_CLASS}
+          titleClassName={STRETCHED_SECTION_TITLE_CLASS}
+        >
+          Benefits of the Russian Shared Values Visa Program
+        </SectionTitle>
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
@@ -102,10 +105,10 @@ export function BenefitsSection() {
                     />
                   </div>
 
-                  <h3 className="font-ibm-plex mb-3 text-xl font-semibold text-slate-900 transition-colors duration-300 group-hover:text-slate-950 lg:text-2xl">
+                  <h3 className="section-heading-sm mb-3 text-xl transition-colors duration-300 group-hover:text-slate-950 lg:text-2xl">
                     {benefit.title}
                   </h3>
-                  <p className="font-ibm-plex text-base leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-700 lg:text-lg">
+                  <p className="text-base leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-700 lg:text-lg">
                     {benefit.description}
                   </p>
                 </div>

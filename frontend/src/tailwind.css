@@ -6,9 +6,104 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@layer utilities {
-  .font-ibm-plex {
+@layer base {
+  body {
     font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-    letter-spacing: 0em;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
   }
 }
+
+@layer components {
+  .section-heading-xl {
+    @apply text-4xl font-medium leading-[1.12] tracking-[-0.025em] text-balance text-slate-900;
+    @apply lg:text-5xl xl:text-6xl;
+  }
+
+  .section-heading-sm {
+    @apply font-medium tracking-[-0.02em] text-slate-900;
+  }
+
+  
+  .section-title-display {
+    font-weight: 450;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    text-wrap: balance;
+    font-size: clamp(1.875rem, 1.2rem + 2.5vw, 3.75rem);
+    background-image: linear-gradient(
+      118deg,
+      #020617 14%,
+      #164e63 40%,
+      #134e4a 66%,
+      #312e81 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (min-width: 1024px) {
+    .section-title-display {
+      font-size: clamp(2.75rem, 1.5rem + 2.2vw, 3.85rem);
+    }
+  }
+
+
+  .section-title-frame {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title-display {
+    font-weight: 450;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    font-size: clamp(1.5rem, 4.2vw + 0.85rem, 6rem);
+    background-image: linear-gradient(
+      115deg,
+      #020617 10%,
+      #164e63 36%,
+      #115e59 60%,
+      #3730a3 96%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (min-width: 768px) {
+    .section-title-frame::before,
+    .section-title-frame::after {
+      content: '';
+      position: absolute;
+      width: 1.75rem;
+      height: 1.75rem;
+      pointer-events: none;
+    }
+
+    .section-title-frame::before {
+      top: 0;
+      left: 0;
+      border-top: 2px solid rgb(34 211 238 / 0.75);
+      border-left: 2px solid rgb(34 211 238 / 0.75);
+    }
+
+    .section-title-frame::after {
+      right: 0;
+      bottom: 0;
+      border-bottom: 2px solid rgb(167 139 250 / 0.65);
+      border-right: 2px solid rgb(167 139 250 / 0.65);
+    }
+  }
+}
+
